@@ -1,10 +1,12 @@
+using GraphQlC_;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddSingleton<Data>();
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<GraphQlC_.Query>();

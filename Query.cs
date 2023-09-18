@@ -1,16 +1,23 @@
 
+using System.Globalization;
+
 namespace GraphQlC_
 {
   public class Query
   {
-    public Product getAllProducts()
+    private Data dataBase { get; set; }
+
+    public Query(Data data)
     {
-      return new Product
-      {
-        id = 1,
-        name = "Pacote de Arroz",
-        price = 12.50M
-      };
+      dataBase = data;
+    }
+    public List<Product> products()
+    {
+      return dataBase.Products;
+    }
+    public Custumer custumers(int id)
+    {
+      return dataBase.Custumers.FirstOrDefault(x => x.id == id);
     }
   }
 }
