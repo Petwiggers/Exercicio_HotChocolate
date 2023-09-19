@@ -28,8 +28,6 @@ namespace GraphQlC_
 
         public Custumer updateCustomerEmail(int custumerId, string email)
         {
-            Console.WriteLine(email);
-            Console.WriteLine(dataBase.Custumers[custumerId - 1].email);
             dataBase.Custumers[custumerId - 1].email = email;
             return dataBase.Custumers[custumerId - 1];
         }
