@@ -9,7 +9,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<Data>();
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<GraphQlC_.Query>();
+    .AddQueryType<Query>()
+    .AddMutationType<Mutation>();
 
 var app = builder.Build();
 
