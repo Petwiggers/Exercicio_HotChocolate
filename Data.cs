@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace GraphQlC_
 {
     public class Data
     {
         public List<Product> Products { get; set; }
         public List<Custumer> Custumers { get; set; }
+        public List<Order> Orders { get; set; }
         public Data()
         {
             Products = new List<Product>{
@@ -63,6 +59,34 @@ namespace GraphQlC_
                     id = 4,
                     name = "Rodrigo",
                     email = "rodrigo@teste.com"
+                }
+            };
+
+            Orders = new List<Order>
+            {
+                new Order
+                {
+                    id = 1,
+                    custumerId = 2,
+                    date = new DateTime(2004,6,21),
+                },
+                new Order
+                {
+                    id = 2,
+                    custumerId = 1,
+                    date = new DateTime(2010,9,26),
+                },
+                new Order
+                {
+                    id = 3,
+                    custumerId = 4,
+                    date =  new DateTime(2023,12,30)
+                },
+                new Order
+                {
+                    id = 4,
+                    custumerId = 2,
+                    date = new DateTime(1999,7,14)
                 }
             };
         }

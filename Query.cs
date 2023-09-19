@@ -19,5 +19,9 @@ namespace GraphQlC_
     {
       return dataBase.Custumers.FirstOrDefault(x => x.id == id);
     }
+    public List<Order> orders(int custumerId)
+    {
+      return dataBase.Orders.Where(x => x.custumerId == custumerId).ToList();
+    }
   }
 }
